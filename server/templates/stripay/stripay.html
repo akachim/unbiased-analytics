@@ -1,0 +1,38 @@
+{% extends "Home/layout/main-layout.html" %}
+{% block title %}Payment{% endblock %}
+
+{% block script %}
+<script src="{{ url_for('static', filename='js/stripe-change-subscription.js') }}"></script>
+<script src="{{ url_for('static', filename='js/stripe-subscription.js') }}"></script>
+{% endblock %}
+
+{% block page_content %}
+    <div class="contianer mt-5 py-4">
+        {% if subscription and subscription.status== "active" %}
+
+        <h4>Your subscription:</h4>
+            
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{ product.name }}</h5>
+                
+                <p class="card-text">{{ product.description }}</p>
+
+            </div>
+        </div>
+            <div>
+                <button type="submit" id="change-plan-button" class="btn btn-primary" value="" onclick="changePlan()">Upgrade to premium</button>
+            </div>
+        {% else %}
+        <div>
+            <button type="submit" class="btn btn-primary"  id="checkout-basic">Buy Basic Plan</button>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-warning" id="checkout-premium">Buy Premium Plan</button>
+        </div>
+
+        
+        {% endif %}
+        
+    </div>
+{% endblock %}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title%} {% endblock %} Unbiased Opinion Analytics</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/0911af2be3.js" crossorigin="anonymous"></script>
+    <script src=""></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <!--Custom css-->
+    <link rel="stylesheet" href="../../../static/css/styles/style.css">
+
+    {% block stylesheet %}{% endblock %}
+    {% block script %}{% endblock %}
+</head>
+<body class="bg-dark">
+    <!--Including the navigation bar-->
+    {% include 'Home/components/navbar.html' %}
+    
+    {% include 'Home/components/messages.html' %}
+
+    {% block page_content %}
+    <main class="main-layout">
+
+        <div className="main-layout-wrap">
+            <!--including the main hompage-->
+            {% include 'Home/pages/home.html' %}
+        </div> 
+        <!--Including the footer-->
+        {%  include 'Home/components/footer.html' %}
+    </main>
+    {%  endblock %}
+
+</body>
+</html>

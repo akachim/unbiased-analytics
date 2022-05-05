@@ -1,0 +1,10 @@
+.sqlite
+__pycache__
+.json
+.env
+.flaskenv
+.sh
+.env
+.flaskenv
+redis-stable
+migrations

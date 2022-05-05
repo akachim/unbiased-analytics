@@ -1,0 +1,38 @@
+<!---
+    NAVBAR OF HOME PAGE
+-->
+
+
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
+   <div class="container-fluid">
+     <a class="navbar-brand" href="/">
+         <img src="../../../static/images/home/img/logo/logo.png" alt="Avatar Logo" style="width:40px;" class="rounded-pill"> 
+      </a>
+     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+       <span class="navbar-toggler-icon"></span>
+     </button>
+     <div class="collapse navbar-collapse" id="collapsibleNavbar">
+       <ul class="navbar-nav justify-content-end">
+         <li class="nav-item">
+           <a class="nav-link" href="#company">Company</a>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link" href="#services">Services</a>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link" href="#about">About</a>
+         </li>
+         {% if current_user.is_authenticated %}
+         <div class="nav-item">
+            <a class="nav-link" href="{{ url_for('main.dashboard')}}">Dashboard</a>
+         </div>
+         {% else %}
+         <div class="nav-item">
+            <a class="nav-link" href="{{ url_for('auth.login')}}">Login</a>
+         </div>
+         {% endif %}
+       </ul>
+     </div>
+   </div>
+ </nav> 

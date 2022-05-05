@@ -1,0 +1,65 @@
+{% extends "Home/layout/main-layout.html" %}
+{% block title %}Payment{% endblock %}
+
+{% block script %}
+
+<script src="{{ url_for('static', filename='js/stripe-subscription.js') }}"></script>
+{% endblock %}
+
+{% block page_content %}
+
+            <div class="row row-cols-1 row-cols-md-3 mb-4 text-center py-5 px-4">
+                <div class="col">
+                <div class="card mb-4 rounded-3 shadow-lg">
+                    <div class="card-header py-3">
+                    <h4 class="my-0 fw-normal">Free Trial</h4>
+                    </div>
+                    <div class="card-body">
+                    <h1 class="card-title pricing-card-title">$0<small class="text-muted fw-light">/mo</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>10 users included</li>
+                        <li>2 GB of storage</li>
+                        <li>Email support</li>
+                        <li>Help center access</li>
+                    </ul>
+                    <button type="button" id="free-trial-button" class="w-100 btn btn-lg btn-outline-primary">Try now</button>
+                    </div>
+                </div>
+                </div>
+                <div class="col">
+                <div class="card mb-4 rounded-3 shadow-lg border-warning">
+                    <div class="card-header py-3">
+                    <h4 class="my-0 fw-normal">Basic</h4>
+                    </div>
+                    <div class="card-body">
+                    <h1 class="card-title pricing-card-title">$10<small class="text-muted fw-light">/mo</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>1000 words included</li>
+                        <li>10 GB of storage</li>
+                        <li>Priority email support</li>
+                        <li>Help center access</li>
+                    </ul>
+                    <button type="button" id="checkout-basic" class="w-100 btn btn-lg btn-warning">Buy Basic</button>
+                    </div>
+                </div>
+                </div>
+                <div class="col">
+                <div class="card mb-4 rounded-3 shadow-lg border-success">
+                    <div class="card-header py-3 text-white bg-success border-success">
+                    <h4 class="my-0 fw-normal">Premium</h4>
+                    </div>
+                    <div class="card-body">
+                    <h1 class="card-title pricing-card-title">$20<small class="text-muted fw-light">/mo</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>10000 words included</li>
+                        <li>15 GB of storage</li>
+                        <li>Phone and email support</li>
+                        <li>Help center access</li>
+                    </ul>
+                    <button type="button" id="checkout-premium" class="w-100 btn btn-lg btn-success">Buy Premium</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+            
+{% endblock %}
