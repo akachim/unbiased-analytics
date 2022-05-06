@@ -18,6 +18,9 @@ def create_app(config_name):
     app.config.from_object(config[config_name])
     config[config_name].init_app(app)
 
+    if app.config['SSL_REDIRECT']:
+        from flask_sslify import SSlify
+        sslify = SSlify(app)
 
     celery_app.conf.update(app.config)
     

@@ -1,7 +1,8 @@
+from multiprocessing import Manager
 import os
 from server import create_app, db
 from server.models import User, StripeCustomer
-from flask_migrate import Migrate
+from flask_migrate import Migrate, upgrade
 
 
 
@@ -22,3 +23,11 @@ def test():
     import unittest
     tests = unittest.TestLoader().discover('tests')
     unittest.TextTestRunner(verbosity=2).run(tests)
+
+
+@Manager.command
+def deploy():
+    """RUn deployementt tasks"""
+
+    #migrate database to the latest revision
+    upgrade()
